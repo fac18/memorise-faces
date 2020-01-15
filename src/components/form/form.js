@@ -13,17 +13,21 @@ const Form = props => {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="player-input">
+        Enter your github handle
         <input
           id="player-input"
           className="form__input"
+          placeholder="RenataJarmova"
           value={playerInput}
           onchange={event => setPlayerInput(event.target.value)}
         />
       </label>
       <label htmlFor="team-input">
+        Enter your organisation's name
         <input
           id="team-input"
           className="form__input"
+          placeholder="FAC18"
           value={teamInput}
           onchange={event => setTeamInput(event.target.value)}
         />
