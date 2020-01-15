@@ -1,10 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import Header from './components/header/header';
+//import Timer from "../timer/timer"
 
 function App() {
+  // Data will be accessed from the API call later 
+  //const [page, setPage] = React.useState("home");
+
   return (
     <div className="App">
+      {/* <Header> {data? <Timer/> : null} </Header> */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
