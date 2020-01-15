@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -8,6 +9,15 @@ function App() {
   // Data will be accessed from the API call later 
   //const [page, setPage] = React.useState("home");
 
+=======
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Footer from "./components/footer/footer.js";
+
+function App() {
+  // if you do nott have information from the API display the form else display the game
+>>>>>>> master
   return (
     <div className="App">
       {/* <Header> {data? <Timer/> : null} </Header> */}
@@ -25,6 +35,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Footer />
     </div>
   );
 }
