@@ -1,0 +1,30 @@
+body {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.flipper {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+
+img {
+    position: relative;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.flipper__hidden {
+    visibility: hidden;
+}
+
+.flipper__notHidden {
+    visibility: visible;
+}

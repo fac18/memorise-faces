@@ -1,7 +1,9 @@
 import React from "react";
+import Flipper from "./flipper"
+import card from "./card.css"
 
 const Card = props => {
-  const [view, setView] = React.useState(false);
+//   const [view, setView] = React.useState(false);
 
   const userArray = props.userData;
   // a card that is blank
@@ -16,24 +18,29 @@ const Card = props => {
     //we've kept the arrays inside of useMemo because they are always changing
     // (therefore they would be shuffled at every re-render)
     //create array of images components
-    const imgArr = userArray.map(user => {
+    // if flipState is true, visibility is equal to visible
+        // else visibility is hidden
+
+        // className= { props.flipState ? "flipper__notHidden" : "flipper__hidden"}>
+            
+    const imgArr = userArray.map( user => {
       return (
-        <li>
-          <img
-            src={user.avatar_url}
-            className={user.login}
-            alt="User's avatar"
-          ></img>
-        </li>
+            <li><Flipper><img
+                src={user.avatar_url}
+                className={user.login}
+                alt="User's avatar"
+            ></img>
+            </Flipper>
+            </li>
       );
     });
-
+    //className= { props.flipState ? "flipper__notHidden" : "flipper__hidden"}> 
+                
     // create array of name components
-    const nameArr = userArray.map(user => {
+    const nameArr = userArray.map( user => {
       return (
-        <li>
-          <h1 className={user.login}>{user.login}</h1>
-        </li>
+            <li> <Flipper><h1 className={user.login}>{user.login}</h1></Flipper>
+            </li>
       );
     });
 
@@ -44,10 +51,11 @@ const Card = props => {
   if (!props.userData) {
     return <h2>Loading...</h2>;
   }
+  console.log({newArr});
+
   return (
     <section>
       <ul>{newArr}</ul>
-      <button onClick={() => setView(!view)}>clickme</button>
     </section>
   );
 };
