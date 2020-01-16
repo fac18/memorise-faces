@@ -10,10 +10,9 @@ const Form = props => {
     event.preventDefault();
     getTeamData(playerInput, orgInput, teamInput)
     .then( data => {
-      const APIdata = data;
+      props.setUserData(data)
       console.log(data);
       props.setPage("card");
-      return APIdata;
     }
     )
   };

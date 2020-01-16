@@ -11,12 +11,14 @@ function App() {
   // if you do nott have information from the API display the form else display the game
   // Data will be accessed from the API call later
   const [page, setPage] = React.useState("home");
+  const [userData, setUserData] = React.useState(null);
   
+
   if (page === "home") {
     return (
       <div className="App">
         <Header />
-        <Form setPage={setPage}/>
+        <Form setPage={setPage} setUserData={setUserData}/>
         <Footer />
       </div>
     );
@@ -24,7 +26,7 @@ function App() {
     return (
       <div className="App">
         <Header />
-        <Card setPage={setPage}/>
+        <Card setPage={setPage} userData={userData}/>
         <Footer />
       </div>
     );
