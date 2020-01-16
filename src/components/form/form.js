@@ -8,7 +8,13 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    getTeamData(playerInput, orgInput, teamInput);
+    getTeamData(playerInput, orgInput, teamInput)
+    .then( data => {
+      props.setUserData(data)
+      console.log(data);
+      props.setPage("card");
+    }
+    )
   };
 
   return (
