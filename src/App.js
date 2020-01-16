@@ -16,7 +16,7 @@ function App() {
   const [flipState, setFlipState] = React.useState(false);
   //<Card setPage={setPage} userData={userData} setUserData={setUserData}/>
   // <Flipper flipState={flipState} setFlipState={setFlipState}></Flipper>
-
+  //
   if (page === "home") {
     return (
       <div className="App">
@@ -29,7 +29,8 @@ function App() {
     return (
       <div className="App">
         <Header/>
-        <Card setPage={setPage} userData={userData} setUserData={setUserData}/>
+
+        <Card setPage={setPage} userData={userData} setUserData={setUserData} />
         <Footer />
       </div>
     );
