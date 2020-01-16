@@ -1,4 +1,4 @@
-const token = process.env.TOKEN;
+const token = process.env.REACT_APP_TOKEN;
 
 const checkResponse = response => {
     if (response.status !== 200) {
