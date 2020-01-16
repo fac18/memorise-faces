@@ -21,7 +21,6 @@ const Card = props => {
 
     const imgArr = userArray.map( user => {
       return (
-        <Flipper>
             <li>
             <img
                 src={user.avatar_url}
@@ -29,18 +28,15 @@ const Card = props => {
                 alt="User's avatar"
             ></img>
             </li>
-        </Flipper>
       );
     });
 
     // create array of name components
     const nameArr = userArray.map( user => {
       return (
-        <Flipper>
             <li>
                 <h1 className={user.login}>{user.login}</h1>
             </li>
-        </Flipper>
       );
     });
 
