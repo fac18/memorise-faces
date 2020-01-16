@@ -1,33 +1,44 @@
 import React from "react";
-import { getTeamData } from "../../utils/getData"
+import { getTeamData } from "../../utils/getData";
 
 const Form = props => {
   const [playerInput, setPlayerInput] = React.useState("");
   const [teamInput, setTeamInput] = React.useState("");
+  const [orgInput, setOrgInput] = React.useState("");
 
   const handleSubmit = event => {
     event.preventDefault();
-    getTeamData();
+    getTeamData(playerInput, orgInput, teamInput);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="player-input">
-        Enter your github handle
+        Enter your name:
         <input
           id="player-input"
           className="form__input"
-          placeholder="RenataJarmova"
+          placeholder="Bob"
           value={playerInput}
           onChange={event => setPlayerInput(event.target.value)}
         />
       </label>
+      <label htmlFor="org-input">
+        Enter your github organisation's name:
+        <input
+          id="org-input"
+          className="form__input"
+          placeholder="FAC18"
+          value={orgInput}
+          onChange={event => setOrgInput(event.target.value)}
+        />
+      </label>
       <label htmlFor="team-input">
-        Enter your organisation's name
+        Enter your team name:
         <input
           id="team-input"
           className="form__input"
-          placeholder="FAC18"
+          placeholder="students"
           value={teamInput}
           onChange={event => setTeamInput(event.target.value)}
         />
