@@ -8,10 +8,22 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    getTeamData(playerInput, orgInput, teamInput).then(data => {
-      props.setUserData(data);
-      props.setPage("card");
-    });
+    getTeamData(playerInput, orgInput, teamInput)
+      .then(data => {
+        data.map(user => {
+          return {
+            login: user.login,
+            avatar_url: user.avatar_url,
+            visible: true,
+            flipped: false
+          };
+        });
+      })
+      .then(newUserArr => {
+        console.log(newUserArr);
+        return props.setUserData(newUserArr);
+      });
+    props.setPage("card");
   };
 
   return (
