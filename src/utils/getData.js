@@ -18,7 +18,7 @@ export const getTeamData = (player, org, team) => {
     `https://api.github.com/orgs/${org}/teams/${team}/members?access_token=${token}`
   )
     .then(checkResponse)
-    .then(data => console.log(data))
+    .then(data => { return data })
     .catch(err => {
       throw new Error(`fetch getTeamData failed ${err}`);
     });
