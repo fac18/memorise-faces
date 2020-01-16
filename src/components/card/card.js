@@ -1,4 +1,6 @@
 import React from "react";
+import Flipper from "./flipper"
+import card from "./card.css"
 
 const Card = props => {
   const [view, setView] = React.useState(false);
@@ -16,24 +18,29 @@ const Card = props => {
     //we've kept the arrays inside of useMemo because they are always changing
     // (therefore they would be shuffled at every re-render)
     //create array of images components
-    const imgArr = userArray.map(user => {
+
+    const imgArr = userArray.map( user => {
       return (
-        <li>
-          <img
-            src={user.avatar_url}
-            className={user.login}
-            alt="User's avatar"
-          ></img>
-        </li>
+        <Flipper>
+            <li>
+            <img
+                src={user.avatar_url}
+                className={user.login}
+                alt="User's avatar"
+            ></img>
+            </li>
+        </Flipper>
       );
     });
 
     // create array of name components
-    const nameArr = userArray.map(user => {
+    const nameArr = userArray.map( user => {
       return (
-        <li>
-          <h1 className={user.login}>{user.login}</h1>
-        </li>
+        <Flipper>
+            <li>
+                <h1 className={user.login}>{user.login}</h1>
+            </li>
+        </Flipper>
       );
     });
 
@@ -44,6 +51,7 @@ const Card = props => {
   if (!props.userData) {
     return <h2>Loading...</h2>;
   }
+  console.log({newArr});
   return (
     <section>
       <ul>{newArr}</ul>

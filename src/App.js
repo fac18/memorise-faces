@@ -26,7 +26,7 @@ function App() {
     return (
       <div className="App">
         <Header />
-        <Card setPage={setPage} userData={userData}/>
+        <Card setPage={setPage} userData={userData} setUserData={setUserData}/>
         <Footer />
       </div>
     );
