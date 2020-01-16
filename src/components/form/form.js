@@ -1,4 +1,5 @@
 import React from "react";
+import { getTeamData } from "../../utils/getData"
 
 const Form = props => {
   const [playerInput, setPlayerInput] = React.useState("");
@@ -6,8 +7,7 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // API call
-    // set page state to game
+    getTeamData();
   };
 
   return (
@@ -19,7 +19,7 @@ const Form = props => {
           className="form__input"
           placeholder="RenataJarmova"
           value={playerInput}
-          onchange={event => setPlayerInput(event.target.value)}
+          onChange={event => setPlayerInput(event.target.value)}
         />
       </label>
       <label htmlFor="team-input">
@@ -29,7 +29,7 @@ const Form = props => {
           className="form__input"
           placeholder="FAC18"
           value={teamInput}
-          onchange={event => setTeamInput(event.target.value)}
+          onChange={event => setTeamInput(event.target.value)}
         />
       </label>
       <button type="submit" className="form__button">
