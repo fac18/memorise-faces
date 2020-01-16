@@ -1,4 +1,4 @@
-import { token } from "../token";
+const token = process.env.TOKEN;
 
 const checkResponse = response => {
     if (response.status !== 200) {
