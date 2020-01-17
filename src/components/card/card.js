@@ -8,29 +8,20 @@ const Card = ({ setPage, userData, setUserData, setFlippedArray }) => {
     return [...arr].sort(() => 0.5 - Math.random());
   };
 
-  const handleClick = () => {
-    const updatedUserArr = userData.map(user => {
-      if (user.login === userData.login) {
-        return { ...user, flipped: true };
-      }
-      return user;
-    });
-    setFlippedArray(prevVal => [...prevVal, userData.login]);
-    setUserData(updatedUserArr);
-  };
-
   let newArr = React.useMemo(() => {
     // we've kept the arrays inside of useMemo because they are always changing
     // (therefore they would be shuffled at every re-render)
     // create array of images components
+
     const imgArr = userData.map(user => {
-      if (!user.visible)
-        return (
-          <div>
-            <p>I am invisible</p>
-          </div>
-        );
-      return user.flipped ? (
+      // if (!user.visible)
+      //   return (
+      //     <div>
+      //       <p>I am invisible</p>
+      //     </div>
+      //   );
+      // return user.flipped ? (
+      return (
         <div className="visible">
           <li className="hidden">
             <img
@@ -40,37 +31,34 @@ const Card = ({ setPage, userData, setUserData, setFlippedArray }) => {
             ></img>
           </li>
         </div>
-      ) : (
-        <div>
-          <p>I AM NOT FLIPPED</p>
-          <button onClick={handleClick}>Flip me</button>
-        </div>
       );
     });
     // create array of name components
     const nameArr = userData.map(user => {
-      if (!user.visible)
-        return (
-          <div>
-            <p>I am invisible</p>
-          </div>
-        );
-      return user.flipped ? (
+      // if (!user.visible)
+      //   return (
+      //     <div>
+      //       <p>I am invisible</p>
+      //     </div>
+      //   );
+      // return user.flipped ? (
+      return (
         <div className="visible">
           <li className="hidden">
             <h1 className={user.login}>{user.login}</h1>
           </li>
         </div>
-      ) : (
-        <div>
-          <p>I AM NOT FLIPPED</p>
-          <button onClick={handleClick}>Flip me</button>
-        </div>
       );
+      // : (
+      //   <div>
+      //     <p>I AM NOT FLIPPED</p>
+      //     <button onClick={handleClick}>Flip me</button>
+      //   </div>
+      // );
     });
     //join arrays and shuffle them
     return shuffle(nameArr.concat(imgArr));
-  }, [handleClick, userData]); // array will only reshuffle when userArray (a prop) is changed - props should not change
+  }, [userData]); // array will only reshuffle when userArray (a prop) is changed - props should not change
   if (!userData) {
     return <h2>Loading...</h2>;
   }

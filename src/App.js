@@ -16,20 +16,20 @@ function App() {
   // const [flipState, setFlipState] = React.useState(false);
   const [flippedArray, setFlippedArray] = React.useState([]);
 
-  React.useEffect(() => {
-    console.log({ flippedArray });
-    if (flippedArray.length === 2) {
-      const flippedUsers = userData.map(user => {
-        console.log(userData.login, flippedArray[0]);
-        if (user.login === flippedArray[1] && user.login === flippedArray[0]) {
-          return { ...user, visible: false };
-        }
-        return { ...user, flipped: false };
-      });
-      setFlippedArray([]);
-      setUserData(flippedUsers);
-    }
-  }, [flippedArray, userData]);
+  // React.useEffect(() => {
+  //   console.log({ flippedArray });
+  //   if (flippedArray.length === 2) {
+  //     const flippedUsers = userData.map(user => {
+  //       console.log(userData.login, flippedArray[0]);
+  //       if (user.login === flippedArray[1] && user.login === flippedArray[0]) {
+  //         return { ...user, visible: false };
+  //       }
+  //       return { ...user, flipped: false };
+  //     });
+  //     setFlippedArray([]);
+  //     setUserData(flippedUsers);
+  //   }
+  // }, [flippedArray, userData]);
 
   if (page === "home") {
     return (
@@ -47,13 +47,22 @@ function App() {
           {userData ? (
             userData.map(user => {
               return (
-                <Card
-                  {...user}
-                  setPage={setPage}
-                  userData={userData}
-                  setUserData={setUserData}
-                  setFlippedArray={setFlippedArray}
-                />
+                <div>
+                  <Flipper
+                    {...user}
+                    setPage={setPage}
+                    userData={userData}
+                    setUserData={setUserData}
+                    setFlippedArray={setFlippedArray}
+                  />
+                  <Card
+                    {...user}
+                    setPage={setPage}
+                    userData={userData}
+                    setUserData={setUserData}
+                    setFlippedArray={setFlippedArray}
+                  />
+                </div>
               );
             })
           ) : (
