@@ -1,6 +1,6 @@
 import React from "react";
 import Flipper from "./flipper"
-import card from "./card.css"
+import "./card.css"
 
 const Card = props => {
 //   const [view, setView] = React.useState(false);

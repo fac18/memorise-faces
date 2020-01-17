@@ -7,6 +7,11 @@ const Flipper = props => {
     const [flipState, setFlipState] = React.useState(false);
     console.log(flipState)
     
+    // return flipState ?
+    //     (<button className="flipper flipper__hidden" onClick={() => setFlipState(!flipState)}></button>)
+    //     :
+    //     (<button className="flipper flipper__notHidden" onClick={() => setFlipState(!flipState)}></button>)
+
     return (
         <button className="flipper" onClick={ () => setFlipState(!flipState) }></button>
     )
