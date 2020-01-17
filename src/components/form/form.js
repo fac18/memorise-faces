@@ -1,5 +1,6 @@
 import React from "react";
 import { getTeamData } from "../../utils/getData";
+import "./form.css"
 
 const Form = props => {
   const [playerInput, setPlayerInput] = React.useState("");
@@ -25,7 +26,7 @@ const Form = props => {
           value={playerInput}
           onChange={event => setPlayerInput(event.target.value)}
         />
-      </label>
+      </label><br/>
       <label htmlFor="org-input">
         Enter your github organisation's name:
         <input
@@ -35,7 +36,7 @@ const Form = props => {
           value={orgInput}
           onChange={event => setOrgInput(event.target.value)}
         />
-      </label>
+      </label><br/>
       <label htmlFor="team-input">
         Enter your team name:
         <input
@@ -45,7 +46,7 @@ const Form = props => {
           value={teamInput}
           onChange={event => setTeamInput(event.target.value)}
         />
-      </label>
+      </label><br/>
       <button type="submit" className="form__button">
         ENTER
       </button>
