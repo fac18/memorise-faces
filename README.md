@@ -1,8 +1,7 @@
-
+# Memorise FACes
 
 ## Installation guide:
-
-In the project directory, you can run:
+### `git clone` this repo
 
 ### `npm start`
 
@@ -17,4 +16,4 @@ Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and deployed to [Netlify](https://github.com/fac18/memorise-faces).
+#### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and deployed to [Netlify](https://github.com/fac18/memorise-faces).
