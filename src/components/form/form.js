@@ -1,7 +1,7 @@
 import React from "react";
 import { getTeamData } from "../../utils/getData";
 
-const Form = props => {
+const Form = ({ setPage, setUserData }) => {
   const [playerInput, setPlayerInput] = React.useState("");
   const [teamInput, setTeamInput] = React.useState("");
   const [orgInput, setOrgInput] = React.useState("");
@@ -11,19 +11,19 @@ const Form = props => {
     getTeamData(playerInput, orgInput, teamInput)
       .then(data => {
         data.map(user => {
-          return {
+          return setUserData({
             login: user.login,
             avatar_url: user.avatar_url,
             visible: true,
             flipped: false
-          };
+          });
         });
       })
       .then(newUserArr => {
         console.log(newUserArr);
-        return props.setUserData(newUserArr);
+        // setUserData(newUserArr);
       });
-    props.setPage("card");
+    setPage("card");
   };
 
   return (

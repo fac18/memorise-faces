@@ -44,17 +44,21 @@ function App() {
       <div className="App">
         <Header />
         <div>
-          {userData.map(user => {
-            return (
-              <Card
-                {...user}
-                setPage={setPage}
-                userData={userData}
-                setUserData={setUserData}
-                setFlippedArray={setFlippedArray}
-              />
-            );
-          })}
+          {userData ? (
+            userData.map(user => {
+              return (
+                <Card
+                  {...user}
+                  setPage={setPage}
+                  userData={userData}
+                  setUserData={setUserData}
+                  setFlippedArray={setFlippedArray}
+                />
+              );
+            })
+          ) : (
+            <h1>userData has not yet loaded</h1>
+          )}
         </div>
         <Footer />
       </div>
