@@ -1,5 +1,5 @@
 import React from "react";
-import card from "./card.css";
+import "./card.css";
 
 const Card = ({ setPage, userData, setUserData, setFlippedArray }) => {
   // randomise the way that we display the cards (names and photos)
@@ -22,14 +22,16 @@ const Card = ({ setPage, userData, setUserData, setFlippedArray }) => {
       //   );
       // return user.flipped ? (
       return (
-        <div className="visible">
-          <li className="hidden">
-            <img
-              src={user.avatar_url}
-              className={user.login}
-              alt="User's avatar"
-            ></img>
-          </li>
+        <div className="container">
+          <div className="wrap">
+            <li className="box">
+              <img
+                src={user.avatar_url}
+                className={user.login}
+                alt="User's avatar"
+              ></img>
+            </li>
+          </div>
         </div>
       );
     });
@@ -43,10 +45,15 @@ const Card = ({ setPage, userData, setUserData, setFlippedArray }) => {
       //   );
       // return user.flipped ? (
       return (
-        <div className="visible">
-          <li className="hidden">
-            <h1 className={user.login}>{user.login}</h1>
-          </li>
+        <div className="container">
+          <div className="wrap">
+            <li className="box">
+              {" "}
+              <Flipper>
+                <h1 className={user.login}>{user.login}</h1>
+              </Flipper>
+            </li>
+          </div>
         </div>
       );
       // : (
