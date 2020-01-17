@@ -16,9 +16,11 @@ const Form = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form__style">
+      <br/><br/>
       <label htmlFor="player-input">
         Enter your name:
+        <br/>
         <input
           id="player-input"
           className="form__input"
@@ -29,6 +31,7 @@ const Form = props => {
       </label><br/>
       <label htmlFor="org-input">
         Enter your github organisation's name:
+        <br/>
         <input
           id="org-input"
           className="form__input"
@@ -39,6 +42,7 @@ const Form = props => {
       </label><br/>
       <label htmlFor="team-input">
         Enter your team name:
+        <br/>
         <input
           id="team-input"
           className="form__input"

@@ -25,13 +25,17 @@ const Card = props => {
             
     const imgArr = userArray.map( user => {
       return (
-            <li><Flipper><img
+        <div className="container">
+          <div className="wrap">
+            <li className="box" ><Flipper><img
                 src={user.avatar_url}
                 className={user.login}
                 alt="User's avatar"
             ></img>
             </Flipper>
             </li>
+          </div>
+        </div>
       );
     });
     //className= { props.flipState ? "flipper__notHidden" : "flipper__hidden"}> 
@@ -39,8 +43,12 @@ const Card = props => {
     // create array of name components
     const nameArr = userArray.map( user => {
       return (
-            <li> <Flipper><h1 className={user.login}>{user.login}</h1></Flipper>
+      <div className="container">
+        <div className="wrap">
+          <li className="box" > <Flipper><h1 className={user.login}>{user.login}</h1></Flipper>
             </li>
+        </div>
+      </div>
       );
     });
 
